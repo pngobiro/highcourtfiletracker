@@ -1,0 +1,64 @@
+<title>Editing Batch</title>
+<%= form_for([@batch.courtstation, @batch]) do |f| %>
+  <% if @batch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
+
+      <ul>
+      <% @batch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+    <%= f.label :'Batch Name' %><br />
+    <%= f.text_field(:batch_name,:value => Time.now )%>
+  </div>
+  <div class="field">
+    <%= f.label 'Date Out' %><br />
+    <%= f.date_select :date_out , :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label 'Category' %><br />
+    <%= f.select :category,Movement.categories%>
+  </div>
+
+ <div class="field">
+    <%= f.label :officer %><br />
+    <%= f.text_field :officer_taking_action , :Placeholder => "The Name of The Officer Taking Action"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :'To' %><br />
+    <%= f.text_field:to %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br />
+    <%= f.select :reason ,Movement.reasons %>
+  </div>
+  <div class="field">
+    <%= f.label :results %><br />
+    <%= f.select :outcome , Movement.outcome,:include_blank => true%>
+  </div>
+  <div class="field">
+    <%= f.label :dateofresult %><br />
+    <%= f.date_select :result_date,:start_year=> 2010,:end_year=> 2015,:include_blank => true , :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label 'Rejection Reasons' %><br />
+    <%= f.text_area :reason_for_rejection,:size => "48x6",:Placeholder => "Reasons Why action was not Successful"%>
+  </div>
+  <div class="field">
+    <%= f.label :remarks %><br />
+    <%= f.text_area :remarks, :Placeholder => "Type any other relevant information about the file movemement",:size => "24x3"%>
+  </div>
+  <div class="field">
+    <%= f.label :'Choose Files' %><br />
+    <%= f.collection_select :casefile_ids, Casefile.station_records.order(:casenumber), :id, :casenumber_deceasedname, {}, {multiple: true} %>
+
+  </div> 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

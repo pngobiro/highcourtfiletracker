@@ -1,0 +1,55 @@
+<div id ="filters">
+<h1>Listing movements for File Number <%=@casefile.casenumber%> </h1>
+<p>Type of Case: <%=@casefile.typeofcase %></p>
+<p> Parties: <%=@casefile.parties_names %></p>
+<div>
+<table id= "movements" class = "display" >
+<thead>
+  <tr>
+
+<th>Staff</th>  
+    <th>Date Out</th>
+ <th>Category</th>
+    <th>To</th>
+<th>Officer Taking Action</th>
+    <th>Taken by</th>
+    <th>Reason</th>
+    <th>Results</th>
+    <th>Results Date</th>
+    <th>Reasons for Rejection</th>
+    <th>Remarks</th>
+    <th>Edit</th>
+    <th>Show</th>
+
+  </tr>
+</thead>
+<tbody>
+<% @movements.each do |movement| %>
+  
+  <td><%=movement.recordcreatedby%></td>
+    <td><%= movement.date %></td>
+ <td><%= movement.category %></td>
+    <td><%= movement.to %></td>
+<td><%= movement.officer %></td>
+    <td><%= movement.takenby %></td>
+    <td><%= movement.reason %></td>
+    <td><%= movement.results %></td>
+    <td><%= movement.dateofresult %></td>
+    <th><%= movement.result_reason %></th>
+    <td><%= movement.remarks %></td>
+   
+    <td><%= link_to 'Edit', edit_courtstation_casefile_movement_path(movement.casefile.courtstation,movement.casefile, movement)%></td>
+ <td><%= link_to 'Show', courtstation_casefile_movement_path(movement.casefile.courtstation,movement.casefile, movement)%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+
+<div id = "dashboardicons" >
+<%= link_to link_to image_tag('/assets/add.png') + 'New Movement', new_courtstation_casefile_movement_path(params[:courtstation_id]) %>
+<%= link_to link_to image_tag('/assets/all.png') + 'Cases', courtstation_casefiles_path(params[:courtstation_id]) %>
+<%= link_to link_to image_tag('/assets/pdf.png') + 'Print File Movements' %>
+</div>

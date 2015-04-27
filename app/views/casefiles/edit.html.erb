@@ -1,0 +1,11 @@
+<h1>Editing casefile</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@casefile.courtstation, @casefile] %> |
+<%= link_to 'Back', courtstation_casefiles_path(@casefile.courtstation) %>
+
+<div id = "dashboardicons" >
+<%= link_to link_to image_tag('/assets/show.png') + 'Show', [@casefile.courtstation, @casefile] %>
+<%= link_to link_to image_tag('/assets/back.jpeg') + 'Back',  courtstation_casefiles_path(@casefile.courtstation) %>
+</div>

@@ -1,0 +1,42 @@
+<h1>Listing All Cases</h1>
+	
+<table id= "data" class = "display" >
+<thead>
+  <tr>
+    <th>Case Number</th>
+	<th>Plaintiff(s)/Advocate(s)</th>
+	<th>Defendant(s)/Advocate(s)</th>
+    <th>Date of Filling</th>
+    <th>Type of Case</th>
+    <th>Case Status</th>
+    <th>Nature of Claim</th>
+    <th>Remarks</th>
+    <th>Tracker</th>
+    <th>Payments</th>
+  </tr>
+</thead>
+<tbody>
+<% @casefiles.each do |casefile| %>
+
+  <tr>
+    <td><%= link_to casefile.CaseNumber,casefile %></td>
+	<td><%= casefile.plaintiff_advocate %></td>
+	<td><%= casefile.defendant_advocate %></td>
+    <td><%= casefile.DateofFilling%></td>
+    <td><%= casefile.Typeofcase %></td>
+    <td><%= casefile.CaseStatus %></td>
+    <td><%= casefile.natureofclaim %></td>
+    <td><%= casefile.Remarks %></td>
+    
+    <td><%= link_to 'Tracker', casefile_trackers_path(casefile) %></td>
+    <td><%= link_to 'Payments',casefile_payments_path(casefile)%></td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+<div id= "links" >
+<%= link_to 'Add New Case', new_casefile_path %>
+</div>

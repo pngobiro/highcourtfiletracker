@@ -1,0 +1,11 @@
+<h1>Editing batch</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@batch.courtstation, @batch] %> |
+<%= link_to 'Back', courtstation_batches_path(@batch.courtstation) %>
+
+<div id = "dashboardicons" >
+<%= link_to link_to image_tag('/assets/show.png') + 'Show', [@batch.courtstation, @batch] %>
+<%= link_to link_to image_tag('/assets/back.jpeg') + 'Back',  courtstation_batches_path(@batch.courtstation) %>
+</div>

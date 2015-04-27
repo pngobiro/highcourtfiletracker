@@ -1,0 +1,26 @@
+<h1>Dashboard login</h1>
+<h2>Welcome</h2>
+<div id = "dashboard" >
+
+
+<p>Type the Case Number Here<p/>
+<%= image_tag "search.png" %>
+<%= form_tag(courtstations_casefile_search_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Cases" %>
+  <%= submit_tag "Search", :casenumber => nil %>
+<% end %>
+<div id = "dashboardicons" >
+
+
+<%= link_to image_tag('/assets/caseregister.png') + 'Cases Register'%>
+<%= link_to image_tag('/assets/filemovement.png') + 'File Movements'%>
+<%= link_to image_tag('/assets/casestatus.png') + 'Case Status'%>
+
+<%= link_to image_tag('/assets/user.png') + 'Activity'%>
+<%= link_to image_tag('/assets/audit.png') + 'Audit Trail'%>
+
+
+</div>
+
+</div>
+

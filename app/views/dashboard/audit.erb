@@ -1,0 +1,30 @@
+<div id="filterrific_results">
+</table>
+<table border "2" class = "display" >
+  <tr>
+    <th>User Name</th>
+    <th>User PJ</th>
+    <th>User Station</th>
+    <th>Modified File</th>
+    <th>Type</th>
+    <th>Action</th>
+    <th>Changes</th>
+    <th>IP Address</th>
+    <th>Changes Date and Time</th>
+  </tr>
+<% @changes.each do |change| %>
+  <tr>
+    <td><%= change.user.username %></td>
+    <td><%= change.user.pj %></td>
+    <td><%= change.user.station %></td>
+    <th><%= change.auditable_id%></th>
+    <td><%= change.auditable_type %></td>
+    <td><%= change.action %></td>
+    <td><%= change.audited_changes %></td>
+    <td><%= change.remote_address %></td>
+    <td><%= change.created_at %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+

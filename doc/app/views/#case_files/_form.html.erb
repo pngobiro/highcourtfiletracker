@@ -1,0 +1,57 @@
+<%= form_for(@case_file) do |f| %>
+  <% if @case_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@case_file.errors.count, "error") %> prohibited this case_file from being saved:</h2>
+
+      <ul>
+      <% @case_file.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :CaseNumber %><br />
+    <%= f.text_field :CaseNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :DateofFilling %><br />
+    <%= f.date_select :DateofFilling %>
+  </div>
+  <div class="field">
+    <%= f.label :CourtStation %><br />
+    <%= f.text_field :CourtStation %>
+  </div>
+  <div class="field">
+    <%= f.label :TypeofCase %><br />
+    <%= f.text_field :TypeofCase %>
+  </div>
+  <div class="field">
+    <%= f.label :CaseStatus %><br />
+    <%= f.text_field :CaseStatus %>
+  </div>
+  <div class="field">
+    <%= f.label :CaseParties %><br />
+    <%= f.text_field :CaseParties %>
+  </div>
+  <div class="field">
+    <%= f.label :PrayersSought %><br />
+    <%= f.text_area :PrayersSought %>
+  </div>
+  <div class="field">
+    <%= f.label :DateLastinCourt %><br />
+    <%= f.date_select :DateLastinCourt %>
+  </div>
+  <div class="field">
+    <%= f.label :DateofLastAction %><br />
+    <%= f.date_select :DateofLastAction %>
+  </div>
+  <div class="field">
+    <%= f.label :Remarks %><br />
+    <%= f.text_area :Remarks %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

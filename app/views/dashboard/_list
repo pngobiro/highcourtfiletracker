@@ -1,0 +1,47 @@
+<div id="filterrific_results">
+ <div>
+    <%= page_entries_info casefiles %>
+  </div>
+  <div>
+<table  class = "display" >
+<thead>
+  <tr>
+    <th>Case Number</th>
+<th>Station</th>
+     <th>Parties</th>
+     
+    <th>Date of Filling</th>
+    <th>Type of Case</th>
+    <th>Case Status</th>
+    <th>Year Filed</th>
+    <th>Nature of Claim</th>
+  
+    <th>Movements</th>
+    <th>Update</th>
+  </tr>
+</thead>
+<tbody>
+<% @casefiles.each do |casefile| %>
+
+  <tr>
+    <td><%= link_to casefile.casenumber,casefile_trackers_path(casefile) %></td>
+<td><%= casefile.courtstation  %></td>
+    <td><%= casefile.parties_names %></td>
+ 
+    <td><%= casefile.dateoffilling%></td>
+    <td><%= casefile.typeofcase %></td>
+    <td><%= casefile.casestatus %></td>
+    <td><%= casefile.yearfiled %></td>
+    <td><%= casefile.natureofclaim %></td>
+  
+    
+    <td><%= link_to 'Movements', casefile_trackers_path(casefile) %></td>
+    <td><%= link_to 'Update', edit_casefile_path(casefile)%></td>
+ 
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+
+<%= will_paginate casefiles  %>

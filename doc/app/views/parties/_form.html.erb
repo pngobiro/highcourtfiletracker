@@ -1,0 +1,53 @@
+<%= form_for([@party.casefile, @party]) do |f| %>
+  <% if @party.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@party.errors.count, "error") %> prohibited this party from being saved:</h2>
+
+      <ul>
+      <% @party.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Party %><br />
+    <%= f.select:Party,options_for_select([["Defendant", "Defendant"], ["Plaintiff", "Plaintiff"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :'Full Names' %><br />
+    <%= f.text_field(:FullNames, :size => "50x2",:Placeholder => "Type Party Name Here")%>
+  </div>
+  <div class="field">
+    <%= f.label :Gender %><br />
+    <%= f.select :Gender,options_for_select([["Male", "Male"], ["Female", "Female"], ["Company", "Company"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :Age %><br />
+    <%= f.select :Age,options_for_select([["Adult", "Adult"], ["Minor", "Minor"], ["Company", "Company"]])%>
+  </div>
+  <div class="field">
+    <%= f.label :Contacts %><br />
+    <%= f.text_area(:Contacts,:size => "24x2")%>
+  </div>
+  <div class="field">
+    <%= f.label :'Telephone Contacts' %><br />
+    <%= f.text_field :TelephoneContacts %>
+  </div>
+  <div class="field">
+    <%= f.label :'Email Address' %><br />
+    <%= f.text_field :EmailAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :'Law Firm Name' %><br />
+    <%= f.text_area(:LawFirmName , :size => "24x2",:value => "& Company Advocates")%>
+  </div>
+  <div class="field">
+    <%= f.label :'Law Firm Contacts' %><br />
+    <%= f.text_area(:LawFirmContacts, :size => "24x2") %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

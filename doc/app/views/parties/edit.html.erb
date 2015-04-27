@@ -1,0 +1,6 @@
+<h1>Editing Party Case Number <%= @casefile.CaseNumber%></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@party.casefile, @party] %> |
+<%= link_to 'Back', casefile_parties_path(@party.casefile) %>

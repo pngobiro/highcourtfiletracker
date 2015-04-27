@@ -1,0 +1,51 @@
+<div id= "links" >
+<h3><%=link_to 'Go Back to All Cases',casefiles_path%></h3>
+</div>
+<h1>Listing Trackers for Case Number <%= @casefile.CaseNumber %></h1>
+
+<table border "2" class = "display" >
+  <tr>
+    <th>Date Out</th>
+    <th>Time</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Taken by</th>
+    <th>Reason</th>
+    <th>Officer Taking Action</th>
+	<th>Date In</th>
+	<th>Remarks</th>
+    <th>Results</th>
+    <th>Date of result</th>
+    <th>Show</th>
+    <th>Edit</th>
+    
+  </tr>
+
+<% @trackers.each do |tracker| %>
+  <tr>
+    <td><%= tracker.Date %></td>
+    <td><%= tracker.Time %></td>
+    <td><%= tracker.From %></td>
+    <td><%= tracker.To %></td>
+    <td><%= tracker.TakenBy %></td>
+    <td><%= tracker.Reason %></td>
+    <td><%= tracker.JudgeMagistrate %></td>
+	<td><%= tracker.DateIn %></td>
+	<td><%= tracker.Reamarks %></td>
+    <td><%= tracker.Results %></td>
+    <td><%= tracker.DateofResult %></td>
+
+    <td><%= link_to 'Show', [tracker.casefile, tracker] %></td>
+    <td><%= link_to 'Edit', edit_casefile_tracker_path(tracker.casefile, tracker) %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div id= "links" >
+<%= link_to 'New Tracker', new_casefile_tracker_path(params[:casefile_id]) %>
+</div>
+<div id= "links" >
+<p><%= link_to "Print Tracker ", casefile_trackers_path(format: "pdf") %></p>
+</div>

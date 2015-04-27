@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Station:</b>
+  <%= @sm.station %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @sm.number %>
+</p>
+
+<p>
+  <b>Sentmessage:</b>
+  <%= @sm.sentmessage %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @sm.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_sm_path(@sm) %> |
+<%= link_to 'Back', sms_path %>

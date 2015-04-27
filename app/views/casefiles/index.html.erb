@@ -1,0 +1,75 @@
+	<h1>Listing Files For <%=@courtstation.name%></h1>
+	<div id = "searchform" >
+	<%= search_form_for @q ,url: courtstation_casefiles_path do |f|%>
+	 <div class="field">
+	    <%= f.label :casenumber_cont ,"Case Number" %><br />
+	    <%= f.text_field :casenumber_cont , :Placeholder => "Search by Case Number"%>
+	  </div>
+	<div class="field">
+	    <%= f.label :parties_names_cont ,"Party Name" %><br />
+	    <%= f.text_field :parties_names_cont , :Placeholder => "Search by Parties"%>
+	  </div>
+	<div class="field">
+	    <%= f.label :yearfiled_eq ,"Year Filed" %><br />
+	    <%= f.text_field :yearfiled_eq, :Placeholder => "Search by Year"%>
+	  </div>
+	 <div class="actions"><%= f.submit %></div>
+	<% end %>
+	</div>
+	<table id= "casefiles" class = "display" >
+	<thead>
+  	<tr>
+   	<th>Case Index</th>   
+	<th>Case Number</th>
+	<th>Date Grant was Approved</th>
+	<th>Deceased Name</th>
+	<th>Death Cert Serial</th>
+	<th>Death Cert Number</th>
+         <th>Petitioners/Address</th>
+    	<th>Nature of Claim</th>
+   	<th>Date of Gazzetment</th>
+	<th>Date of Objection</th>
+        <th>Date Grant was Issued</th>
+        <th>Date Grant was Confirmed</th>
+    	<th>Remarks</th>
+	<th>Mobile Number</th>
+    	<th>Show</th>
+    	<th>Movements</th>
+ 	<th>Edit</th>
+  	</tr>
+	</thead>
+	<tbody>
+	<% @casefiles.each do |casefile| %>
+  	<tr>
+  	<td><%= casefile.caseindex %></td>
+    	<td><%= casefile.casenumber %></td>
+    	<td><%= casefile.approvaldate%></td>
+    	<td><%= casefile.parties_names %></td>
+ 	<td><%= casefile.deathcertserial %></td>
+ 	<td><%= casefile.deathcertnumber %></td>
+   	<td><%= casefile.parties_names_b %></td>
+    	<td><%= casefile.natureofclaim %></td>
+        <td><%= casefile.gazettenoticedate %></td>
+	<td><%= casefile.objectiondate %></td>
+        <td><%= casefile.grantissueddate %></td>
+        <td><%= casefile.grantconfirmeddate %></td>
+    	<td><%= casefile.remarks %></td>
+  	<td><%= casefile.mobile_num %></td>
+ 
+    	<td><%= link_to 'Show', [casefile.courtstation, casefile] %></td>
+	<td><%= link_to 'movements',courtstation_casefile_movements_path(casefile.courtstation,casefile)%></td>
+    	<td><%= link_to 'Edit', edit_courtstation_casefile_path(casefile.courtstation, casefile) %></td>
+
+  </tr>
+<% end %>
+</table>
+</tbody>
+</table>
+<br />
+<div id = "dashboardicons" >
+<%= link_to image_tag('/assets/add.png') + "New Probate and Administration File", new_courtstation_casefile_path(params[:courtstation_id]) %>
+<%= link_to image_tag('/assets/filemovement.png') + "All File Movements",station_path(params[:courtstation_id]) %>
+<%= link_to image_tag('/assets/sms.png') + "View Sent SMS",sms_path %>
+<%= link_to image_tag('/assets/archive.png') + "Batches",courtstation_batches_path(params[:courtstation_id]) %>
+
+</div>

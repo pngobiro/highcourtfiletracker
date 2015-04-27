@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  staff: MyString
+  dateofaction: 2014-11-04
+  filenumber: MyString
+  names: MyString
+  tel: MyString
+  categoryaction: MyString
+  action: MyString
+  status: MyString
+
+two:
+  staff: MyString
+  dateofaction: 2014-11-04
+  filenumber: MyString
+  names: MyString
+  tel: MyString
+  categoryaction: MyString
+  action: MyString
+  status: MyString

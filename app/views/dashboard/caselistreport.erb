@@ -1,0 +1,29 @@
+
+<%= form_for @filterrific do |f| %>
+<div id ="filters">
+<table >
+<tr>
+   <td>Case Status </td>
+  <td>Type of Case </td>
+ <td>Year Filed</td>
+ 
+</tr>
+     <td><%= f.select(:casestatus,options_for_select([["Any",""],["Pending", "Pending"],["Concluded", "Concluded"]]),class: 'filterrific-periodically observed') %></td>
+
+
+     <td><%= f.select(:casetype,Casetype.options_for_casetype,{ :include_blank => '- Any -' },class: 'filterrific-periodically observed') %></td>
+
+
+     <td><%= f.select(:filedyear,options_for_select((1980...Time.now.year.next).sort.reverse),{ :include_blank => '- Any -' } ,class: 'filterrific-periodically observed') %></tr>
+
+    
+</table>
+</div>
+<%= render_filterrific_spinner %>
+
+<% end %>
+<%= render(
+  partial: 'dashboard/list',
+locals: { casefiles: @casefiles }
+) %>
+

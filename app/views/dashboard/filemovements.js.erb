@@ -1,0 +1,5 @@
+<% js = escape_javascript(render(partial: 'dashboard/movements',:locals => { :movements => @movements})) %>
+$("#filterrific_results").html("<%= js %>");
+$(document).ready(function() {
+    $(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
+});

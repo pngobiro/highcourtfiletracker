@@ -1,0 +1,14 @@
+/opt/tracks-2.2.3-0/ruby/bin/ruby extconf.rb 
+checking for main() in -lc... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling parser.c
+compiling thin.c
+linking shared-object thin_parser.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20141022-28340-1kbpa7d
+installing default thin_parser libraries

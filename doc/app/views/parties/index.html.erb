@@ -1,0 +1,42 @@
+<h1>Listing Parties For Case Number <%= @casefile.CaseNumber%></h1>
+<div id= "links">
+<%=link_to 'Go Back to All Cases',casefiles_path%>
+</div>
+<table border "1" class = "display">
+  <tr>
+    <th>Party</th>
+    <th>Full Names</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Contacts</th>
+    <th>Telephone Contacts</th>
+    <th>Email Address</th>
+    <th>Law Firm Name</th>
+    <th>Law Firm Contacts</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @parties.each do |party| %>
+  <tr>
+    <td><%= party.Party %></td>
+    <td><%= party.FullNames %></td>
+    <td><%= party.Gender %></td>
+    <td><%= party.Age %></td>
+    <td><%= party.Contacts %></td>
+    <td><%= party.TelephoneContacts %></td>
+    <td><%= party.EmailAddress %></td>
+    <td><%= party.LawFirmName %></td>
+    <td><%= party.LawFirmContacts %></td>
+    <td><%= link_to 'Show', [party.casefile, party] %></td>
+    <td><%= link_to 'Edit', edit_casefile_party_path(party.casefile, party) %></td>
+ 
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div id= "links">
+<%= link_to 'New Party', new_casefile_party_path(params[:casefile_id]) %>
+</div>

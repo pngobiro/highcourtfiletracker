@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<h2>Showing Party For Case Number <%= @casefile.CaseNumber%></h2>
+<p>
+  <b>Party:</b>
+  <%= @party.Party %>
+</p>
+
+<p>
+  <b>Fullnames:</b>
+  <%= @party.FullNames %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @party.Gender %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @party.Age %>
+</p>
+
+<p>
+  <b>Contacts:</b>
+  <%= @party.Contacts %>
+</p>
+
+<p>
+  <b>Telephonecontacts:</b>
+  <%= @party.TelephoneContacts %>
+</p>
+
+<p>
+  <b>Emailaddress:</b>
+  <%= @party.EmailAddress %>
+</p>
+
+<p>
+  <b>Lawfirmname:</b>
+  <%= @party.LawFirmName %>
+</p>
+
+<p>
+  <b>Lawfirmcontacts:</b>
+  <%= @party.LawFirmContacts %>
+</p>
+<%= link_to 'Edit', edit_casefile_party_path(@party.casefile, @party) %> |
+<%= link_to 'Back', casefile_parties_path(@party.casefile) %>

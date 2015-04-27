@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dateofhearing: 2013-01-25
+  judge: MyString
+  court: MyString
+  Remarks: MyText
+
+two:
+  dateofhearing: 2013-01-25
+  judge: MyString
+  court: MyString
+  Remarks: MyText

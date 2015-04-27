@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  CaseNumber: MyString
+  DateofFilling: 2012-12-15
+  CourtStation: MyString
+  TypeofCase: MyString
+  CaseStatus: MyString
+  CaseParties: MyString
+  PrayersSought: MyText
+  DateLastinCourt: 2012-12-15
+  DateofLastAction: 2012-12-15
+  Remarks: MyText
+
+two:
+  CaseNumber: MyString
+  DateofFilling: 2012-12-15
+  CourtStation: MyString
+  TypeofCase: MyString
+  CaseStatus: MyString
+  CaseParties: MyString
+  PrayersSought: MyText
+  DateLastinCourt: 2012-12-15
+  DateofLastAction: 2012-12-15
+  Remarks: MyText

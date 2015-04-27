@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Casenumber:</b>
+  <%= @case_file.CaseNumber %>
+</p>
+
+<p>
+  <b>Dateoffilling:</b>
+  <%= @case_file.DateofFilling %>
+</p>
+
+<p>
+  <b>Courtstation:</b>
+  <%= @case_file.CourtStation %>
+</p>
+
+<p>
+  <b>Typeofcase:</b>
+  <%= @case_file.TypeofCase %>
+</p>
+
+<p>
+  <b>Casestatus:</b>
+  <%= @case_file.CaseStatus %>
+</p>
+
+<p>
+  <b>Caseparties:</b>
+  <%= @case_file.CaseParties %>
+</p>
+
+<p>
+  <b>Prayerssought:</b>
+  <%= @case_file.PrayersSought %>
+</p>
+
+<p>
+  <b>Datelastincourt:</b>
+  <%= @case_file.DateLastinCourt %>
+</p>
+
+<p>
+  <b>Dateoflastaction:</b>
+  <%= @case_file.DateofLastAction %>
+</p>
+
+<p>
+  <b>Remarks:</b>
+  <%= @case_file.Remarks %>
+</p>
+
+
+<%= link_to 'Edit', edit_case_file_path(@case_file) %> |
+<%= link_to 'Back', case_files_path %>

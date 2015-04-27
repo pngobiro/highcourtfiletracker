@@ -1,0 +1,33 @@
+<%= form_for(@sm) do |f| %>
+  <% if @sm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sm.errors.count, "error") %> prohibited this sm from being saved:</h2>
+
+      <ul>
+      <% @sm.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :station %><br />
+    <%= f.text_field :station %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :sentmessage %><br />
+    <%= f.text_area :sentmessage %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

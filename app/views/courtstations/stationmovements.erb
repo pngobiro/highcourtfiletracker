@@ -1,0 +1,71 @@
+	<div id = "searchform" >
+	<%= search_form_for @q ,url: station_path do |f|%>
+	 <div class="field">
+	    <%= f.label :category_cont ,"Category" %><br />
+	    <%= f.select :category_cont,Movement.options_for_category ,:include_blank => true%>
+	  </div>
+	 <div class="field">
+	    <%= f.label :officer_cont ,"Officer Taking Action" %><br />
+	    <%= f.text_field:officer_cont, :Placeholder => "Type The Officer Name Here" %>
+	  </div>
+	 <div class="field">
+	    <%= f.label :to_cont ,"File Taken To" %><br />
+	    <%= f.text_field:to_cont, :Placeholder => "Type The Destination Here" %>
+	  </div>
+	 <div class="field">
+	    <%= f.label :date_cont ,"Date Taken" %><br />
+	    <%= f.text_field:date_cont, :Placeholder => "Date Taken yyyy-mm-dd" %>
+	  </div>
+
+
+	 <div class="actions"><%= f.submit %></div>
+	<% end %>
+<table id= "movements" class = "display" >
+<thead>
+  <tr>
+
+<th>Category</th>   
+  <th>Case Number</th>  
+<th>Date</th>
+    <th>From</th>
+    <th>To</th>
+<th>Officer</th>
+    <th>Taken by</th>
+    <th>Reason</th>
+    <th>Results</th>
+    <th>Results Date</th>
+ 
+    <th>Datein</th>
+    <th>Remarks</th>
+	<th>Telephone Number</th>
+    <th>Edit</th>
+    <th>Show</th>
+
+  </tr>
+</thead>
+<tbody>
+<% @stationmovements.each do |movement| %>
+  <tr>
+  <td><%=movement.category%></td>
+    <td><%=movement.casefile.casenumber%></td>
+<td><%= movement.date %></td>
+    <td><%= movement.from %></td>
+    <td><%= movement.to %></td>
+<td><%= movement.officer %></td>
+    <td><%= movement.takenby %></td>
+    <td><%= movement.reason %></td>
+    <td><%= movement.results %></td>
+    <td><%= movement.dateofresult %></td>
+   
+    <td><%= movement.datein %></td>
+    <td><%= movement.remarks %></td>
+  <td><%= movement.tel %></td>
+    <td><%= link_to 'Edit', edit_courtstation_casefile_movement_path(movement.casefile.courtstation,movement.casefile, movement)%></td>
+ <td><%= link_to 'Show', courtstation_casefile_movement_path(movement.casefile.courtstation,movement.casefile, movement)%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<div id = "dashboardicons" >
+<%= link_to link_to image_tag('/assets/all.png') + 'Cases', courtstation_casefiles_path(params[:id]) %>
+</div>

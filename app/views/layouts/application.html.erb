@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Tracker</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id ="logo">
+<%= image_tag "coat-of-arms.png" %>
+</div>
+<div id ="logojudiciary">
+<%= image_tag "judiciary.jpg" %>
+</div>
+<div id = "header">
+<h1>  </h1>
+<div id = "headertext">
+<h1>  File Tracker </h1>
+<%= link_to image_tag('/assets/home.png') +'Home',courtstations_path%>
+<%= link_to image_tag('/assets/audit.png') + 'Audit Trail'%>
+<%= link_to image_tag('/assets/password.png') +'Change Password',edit_user_registration_path %>
+<%= link_to image_tag('/assets/help.png') +'Help'%>
+<%= link_to image_tag('/assets/admin.png') +'Admin'%>
+
+</div>
+</div>
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+</div>
+<div id="user_nav">
+        <% if user_signed_in? %>
+          Signed in as <%= current_user.username %> and email as <%= current_user.email %>
+          <%= link_to "Sign out", destroy_user_session_path,:method =>:delete%>
+
+        <% end %>
+      </div>
+<div id= "container">
+	  <%= yield %>
+</div>
+<div id="footer">
+		 <h3> The Chief Registrar of The Judiciary, Supreme Court of Kenya,City Hall Way, P.O. BOX 30041-00100, Nairobi-Kenya. info@judiciary.go.ke
+ &copy;2015 Republic of Kenya: The Judiciary. All Rights Reserved.<h3>
+		 </div>
+      
+</body>
+</html>

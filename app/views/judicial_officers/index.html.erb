@@ -1,0 +1,27 @@
+<h1>Listing judicial_officers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Name</th>
+    <th>Chambers</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @judicial_officers.each do |judicial_officer| %>
+  <tr>
+    <td><%= judicial_officer.title %></td>
+    <td><%= judicial_officer.name %></td>
+    <td><%= judicial_officer.chambers %></td>
+    <td><%= link_to 'Show', judicial_officer %></td>
+    <td><%= link_to 'Edit', edit_judicial_officer_path(judicial_officer) %></td>
+    <td><%= link_to 'Destroy', judicial_officer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Judicial officer', new_judicial_officer_path %>

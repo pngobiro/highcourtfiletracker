@@ -1,0 +1,223 @@
+#searchform {
+
+background: #CFB53B;
+color: #175a17;
+display: inline-block;
+border-radius: 10px;
+text-transform: uppercase;
+}
+#tutorials {
+background-color: #b0c4de;
+margin-left: 30px;
+list-style-type: circle;
+
+}
+
+
+#filters {
+
+background: #CFB53B;
+color: #175a17;
+padding-top: 5px;
+padding-left: 15px;
+text-transform: uppercase;
+}
+#links {
+    background: #cd950c;
+    width: 170px;
+    font-family: icon;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+#logo{
+    float: left;
+    padding-left: 15px;
+	padding-top: 5px;
+}
+#logojudiciary{
+    float: right;
+    padding-right: 20px;
+	padding-top: 5px;
+}
+
+#dashboard {
+    background: #CFB53B;
+    height: 250px;
+    border-radius: 15px;
+    padding: 12px;
+	text-align: center;
+	padding-top: 15px;
+}
+#header {
+color: #CFB53B;
+    text-align: center;
+    background-color: white;
+    height: 80px;
+	border-radius: 40px;
+	padding-top: 3px;
+   text-transform: uppercase;
+}
+#footer{
+color: #175a17;
+background: white;
+font-size: 10px;
+border-radius: 10px;
+padding: 1.5px;
+text-align: center;
+}
+#user_nav {
+    background: white;
+    width: 300px;
+	color:#175a17;
+	float: right;
+border-radius: 7px;
+}
+.display {
+    padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	color: black;
+	background: white
+	}
+.bottomer {
+    padding-bottom: 15px;
+    padding-left: 35px;
+	
+}
+.topper {
+    padding-left: 35px;
+	padding-top: 5px;
+}
+
+.actions {
+    padding-left: 35px;
+}
+
+.field {
+    padding-left: 35px;
+    width:95%;
+}
+body {
+  background-color: #06290A;
+  color: #cd950c;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
+  line-height: 18px;
+  margin-top: 2em;
+  margin-left: 6em;
+
+  
+}
+
+.round {
+    border-radius: 10px;
+    text-align: left
+}
+section{
+background-color: #175a17;
+
+}
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left:10px;
+  padding-top:10px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: blue;
+  &:visited {
+    color: blue;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: #cd950c;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  padding-left:100px;
+  background-color: blue;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+#dashboardicons {
+padding: 2px;
+background-color: #CFB53B;
+text-align: center;
+border-radius: 25px;
+list-style: none;
+
+}
+#reports {
+font-size: 20px;
+    background: grey;
+    height: 250px;
+    border-radius: 15px;
+    padding: 12px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  li {
+    background-color: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 0;
+    a {
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #FFFCB2;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/opt/tracks-2.2.3-0/ruby/bin/ruby extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20141022-12565-1t4z3c2
+installing default fastfilereaderext libraries

@@ -1,0 +1,25 @@
+<%= form_for(@courtstation) do |f| %>
+  <% if @courtstation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@courtstation.errors.count, "error") %> prohibited this courtstation from being saved:</h2>
+
+      <ul>
+      <% @courtstation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :typeofcourt %><br />
+    <%= f.text_field :typeofcourt %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

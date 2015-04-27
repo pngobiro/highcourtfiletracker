@@ -1,0 +1,31 @@
+
+<h2>Welcome</h2>
+<div id = "dashboard" >
+
+
+<p>Type the Case Number Here<p/>
+<%= image_tag "search.png" %>
+<%= search_form_for @q do |f| %>
+
+  # Search if the name field contains...
+  <%= f.label :casenumber_cont %>
+  <%= f.search_field :casenumber_cont %>
+
+
+  <%= f.submit %>
+<% end %>
+<div id = "dashboardicons" >
+
+
+<%= link_to image_tag('/assets/caseregister.png') + 'Cases Register'%>
+<%= link_to image_tag('/assets/filemovement.png') + 'File Movements'%>
+<%= link_to image_tag('/assets/casestatus.png') + 'Case Status'%>
+
+<%= link_to image_tag('/assets/user.png') + 'User Activity'%>
+<%= link_to image_tag('/assets/audit.png') + 'Audit Trail'%>
+
+
+</div>
+
+</div>
+

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dateofhearing:</b>
+  <%= @hearing.dateofhearing %>
+</p>
+
+<p>
+  <b>Judge:</b>
+  <%= @hearing.judge %>
+</p>
+
+<p>
+  <b>Court:</b>
+  <%= @hearing.court %>
+</p>
+
+<p>
+  <b>Remarks:</b>
+  <%= @hearing.Remarks %>
+</p>
+
+
+<%= link_to 'Edit', edit_casefile_hearing_path(@hearing.casefile, @hearing) %> |
+<%= link_to 'Back', casefile_hearings_path(@hearing.casefile) %>

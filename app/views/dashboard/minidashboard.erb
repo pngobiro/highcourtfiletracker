@@ -1,0 +1,28 @@
+
+<%= form_for @filterrific do |f| %>
+<div id ="filters">
+<table >
+<tr>
+<td> File Location </td>
+<td> Officer Taking Action  </td>
+<td> File Taken By </td>
+<td> Date Taken </td>
+<td> User </td>
+<td> Court Station </td>
+</tr>
+<tr>
+  <td> <%= f.select:filelocation,Movement.options_for_filetakento ,{ :include_blank => '- Any -' },class: 'filterrific-periodically observed' %></td>
+  <td><%= f.select :officertakingaction,Movement.options_for_officertakingaction,{ :include_blank => '- Any -' },class: 'filterrific-periodically observed' %></td>
+ <td>    <%= f.select:filetakenby,Movement.options_for_filetakenby,{ :include_blank => '- Any -' },class: 'filterrific-periodically observed' %></td>
+ <td><%= f.text_field:with_created_at_gte, :id => "datepicker",:autocomplete => 'off',class: 'datepicker',:size => "10x3" %></td>
+<td><%= f.select:user,Movement.options_for_user,{ :include_blank => '- Any -' },class: 'filterrific-periodically observed' %></td>
+<td><%= f.text_field:courtstation,:size => "10x3",:value =>current_user.station,:readonly => true,class: 'filterrific-periodically observed' %></td>
+</tr>
+</table>
+</div>
+<% end %>
+<%= render(
+  partial: 'dashboard/movements',
+locals: { movements: @movements }
+) %>
+

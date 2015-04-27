@@ -1,0 +1,21 @@
+<div id = "searchform" >
+<%= search_form_for @q ,url: courtstationmovements_courtstation_path do |f|%>
+  <div class="field">
+ <%= f.label :recordcreatedby_cont ,"Staff" %><br />
+    <%= f.text_field :recordcreatedby_cont , :Placeholder => "Search by Staff"%>
+  </div>
+<div class="field">
+ <%= f.label :officer_cont ,"Officer Name" %><br />
+    <%= f.text_field :officer_cont , :Placeholder => "Search by Officer"%>
+  </div>
+<div class="field">
+    <%= f.label :takenby_cont ,"Taken by" %><br />
+    <%= f.text_field :takenby_cont , :Placeholder => "Search by Taken by"%>
+  </div>
+<div class="field">
+    <%= f.label :date_eq ,"Date Out" %><br />
+    <%= f.text_field :date_eq , :Placeholder => "Search by Date out YYYY-MM-DD"%>
+  </div>
+ <div class="actions"><%= f.submit %></div> 
+<% end %>
+</div>

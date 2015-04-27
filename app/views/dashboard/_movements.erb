@@ -1,0 +1,48 @@
+
+
+<div id="filterrific_results">
+ <div>
+    <%= page_entries_info movements%>
+  </div>
+
+<table border "2" class = "display" >
+  <tr>
+    <th>Case Number</th>
+ <th>Date Out</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Taken by</th>
+    <th>Reason</th>
+    <th>Officer Taking Action</th>
+	<th>Date In</th>
+	<th>Remarks</th>
+    <th>Results</th>
+    <th>Date of result</th>
+    <th>Record Created By</th>
+    <th>Record Updated Last By</th>
+
+    
+  </tr>
+
+<% @movements.each do |tracker| %>
+  <tr>
+    <td><%= tracker.casefile.casenumber%></td>
+    <td><%= tracker.created_at %></td>
+    <td><%= tracker.from %></td>
+    <td><%= tracker.to %></td>
+    <td><%= tracker.takenby %></td>
+    <td><%= tracker.reason %></td>
+    <td><%= tracker.officer %></td>
+	<td><%= tracker.datein %></td>
+	<td><%= tracker.remarks %></td>
+    <td><%= tracker.results %></td>
+    <td><%= tracker.dateofresult %></td>
+    <td><%= tracker.recordcreatedby%></td>
+    <td><%= tracker.recordupdatedby%></td>
+    
+  </tr>
+<% end %>
+</table>
+</div>
+<%= will_paginate movements %>
+<%=link_to_function image_tag('/assets/back.jpeg') + "Back", "history.back()"%>

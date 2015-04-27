@@ -1,0 +1,62 @@
+<%= form_for([@tracker.casefile, @tracker]) do |f| %>
+  <% if @tracker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tracker.errors.count, "error") %> prohibited this tracker from being saved:</h2>
+
+      <ul>
+      <% @tracker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Date Out" %><br />
+    <%= f.date_select :Date ,:start_year=> 2013,:end_year=> 2015%>
+  </div>
+  <div class="field">
+    <%= f.label :Time %><br />
+    <%= f.time_select :Time %>
+  </div>
+  <div class="field">
+    <%= f.label :From %><br />
+    <%= f.select :From ,options_for_select([["Registry", "Registry"], ["Court", "Court"],]) %>
+  </div>
+  <div class="field">
+    <%= f.label :To %><br />
+    <%= f.select :To ,options_for_select([["Court", "Court"], ["Registry", "Registry"],["Chambers", "Chambers"],["Prisons", "Prisons"],["Another Station", "Another Station"],["Archives", "Archives"]])  %>
+
+  </div>
+  <div class="field">
+    <%= f.label 'Taken By' %><br />
+    <%= f.text_field :TakenBy, :Placeholder => "Type Name Here"%>
+  </div>
+  <div class="field">
+    <%= f.label :Reason %><br />
+    <%= f.text_area :Reason,:Placeholder => "Type Reason Here",:size => "30x3"%>
+	</div>
+  <div class="field">
+    <%= f.label "Officer Taking Action" %><br />
+    <%= f.text_field :JudgeMagistrate ,:Placeholder => "Name of Officer Taking Action "%>
+  </div>
+  <div class="field">
+    <%= f.label "Date In" %><br />
+    <%= f.date_select :DateIn ,:start_year=> 2013,:end_year=> 2015,:include_blank => true%>
+  </div>
+   <div class="field">
+    <%= f.label "Remarks" %><br />
+    <%= f.text_area :Reamarks,:size => "24x3"%>
+  </div>
+    <div class="field">
+    <%= f.label :Results %><br />
+    <%= f.text_area :Results,:size => "24x3"%>
+  </div>
+  <div class="field">
+    <%= f.label 'Results Date' %><br />
+    <%= f.date_select :DateofResult ,:include_blank => true%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

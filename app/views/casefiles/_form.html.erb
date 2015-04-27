@@ -1,0 +1,104 @@
+<%= form_for([@casefile.courtstation, @casefile]) do |f| %>
+  <% if @casefile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@casefile.errors.count, "error") %> prohibited this casefile from being saved:</h2>
+
+      <ul>
+      <% @casefile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+    <%= f.label :'Case Number' %><br />
+    <%= f.text_field(:casenumber,:Placeholder => "Type The File Number Here" )%>
+  </div>
+  <div class="field">
+    <%= f.label :'Date of Filling' %><br />
+    <%= f.date_select :dateoffilling ,:include_blank => true, :order => [:day, :month, :year]%>
+  </div>
+   <div class="field">
+    <%= f.label :'Year of Filling' %><br />
+    <%= f.text_field :yearfiled ,:Placeholder => "Year of Filling"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Type of Case' %><br />
+    <%= f.text_field:typeofcase ,:value=> "Probate and Administration"%>
+  </div>
+ 
+  <div class="field">
+   <%= f.label :"Deceased Name" %><br />
+   <%= f.text_area :parties_names,:size => "24x3",:Placeholder => "Deceased Name"%>
+  </div>
+  <div class="field">
+   <%= f.label :"Death Serial Number" %><br />
+   <%= f.text_field :deathcertserial,:Placeholder => "Death Certificate Serial Number"%>
+  </div>
+  <div class="field">
+   <%= f.label :"Death Certificate Number" %><br />
+   <%= f.text_field :deathcertnumber,:Placeholder => "Death Certificate Number"%>
+  </div>
+  <div class="field">
+   <%= f.label :"Deceased Citizenship" %><br />
+   <%= f.text_field :deceasedcitizenship,:value =>"Kenyan"%>
+  </div>
+  <div class="field">
+   <%= f.label :"Deceased Residence" %><br />
+   <%= f.text_field :deceasedresidence,:Placeholder => "Deceased Place of Residence"%>
+  </div>
+ <div class="field">
+   <%= f.label :"Deceased Place of Death" %><br />
+   <%= f.text_field :deceasedplaceofdeath,:Placeholder => "Deceased Place of Death"%>
+  </div>
+ <div class="field">
+   <%= f.label :"Deceased Date of Death" %><br />
+   <%= f.date_select :deceaseddateofdeath,start_year:Date.current.year, end_year:1970,:include_blank => true, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label :'Petitioners' %><br />
+    <%= f.text_area :parties_names_b, :size => "24x3",:Placeholder => "Type the Petitioners Names and Adddress "%>
+  </div>
+ <div class="field">
+    <%= f.label :'Nature of Claim' %><br />
+    <%= f.text_area :natureofclaim, :size => "24x3",:value => "SUCCESSION"%>
+  </div>
+  <div class="field">
+   <%= f.label :'Grant Approval Date' %><br />
+   <%= f.date_select :approvaldate,start_year:Date.current.year, end_year:1970,:include_blank => true, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+   <%= f.label :'Grant Was Gazzeted' %><br />
+   <%= f.date_select :gazettenoticedate,start_year:Date.current.year, end_year:1970,:include_blank => true, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label :'Date Objection was Filed' %><br />
+    <%= f.date_select:objectiondate,start_year:Date.current.year, end_year:1970,:include_blank => true%>
+  </div>
+  <div class="field">
+   <%= f.label :'Date Grant Was Issued' %><br />
+   <%= f.date_select :grantissueddate,start_year:Date.current.year, end_year:1970,:include_blank => true, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label :'Date Grant Was Confirmed' %><br />
+    <%= f.date_select :grantconfirmeddate,start_year:Date.current.year, end_year:1970,:include_blank => true, :order => [:day, :month, :year]%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Remarks %><br />
+    <%= f.text_area:remarks, :size => "24x2" ,:Placeholder => "Type any  other useful informatin relevant to the file"%>
+</div>
+<div class="field">
+    <%= f.label :'Mobile Number' %><br />
+    <%= f.text_field :mobile_num,:Placeholder => "Separate Multiple Numbers by Comma" %>
+  </div>
+
+ <div class="field">
+ <%= f.hidden_field :recordupdatedby, :value =>current_user.username,:readonly => true %>
+ </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

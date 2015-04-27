@@ -1,0 +1,91 @@
+
+<table border ="1" cellpadding="1" cellspacing="5" >
+<tr>
+  <td><b>Case number:</b></td>
+  <td><%= @casefile.casenumber %></td>
+</tr>
+
+<tr>
+  <td><b>Date of filling:</b></td>
+  <td><%= @casefile.dateoffilling %></td>
+</tr>
+
+<tr>
+  <td><b>Court station:</b></td>
+  <td><%= @casefile.courtstation.name %></td>
+</tr>
+
+<tr>
+  <td><b>Deceased<b> </td>
+  <td><%=@casefile.parties_names%> </td>
+</tr>
+<tr>
+  <td><b>Deceased Citizenship<b> </td>
+  <td><%=@casefile.deceasedcitizenship%> </td>
+</tr>
+<tr>
+  <td><b>Deceased Residence<b> </td>
+  <td><%=@casefile.deceasedresidence%> </td>
+</tr>
+
+<tr>
+  <td><b>Deceased Place of Death<b> </td>
+  <td><%=@casefile.deceasedplaceofdeath%> </td>
+</tr>
+<tr>
+  <td><b>Deceased Date of Death<b> </td>
+  <td><%=@casefile.deceaseddateofdeath%> </td>
+</tr>
+<tr>
+  <td><b>Petitioners<b> </td>
+  <td><%=@casefile.parties_names_b%> </td>
+</tr>
+
+<tr>
+<td><b>Type of Case<b></td> 
+<td><%=@casefile.typeofcase%> </td>
+</tr>
+
+<tr>
+ <td> <b>Nature of claim:</b></td>
+ <td> <%= @casefile.natureofclaim %></td>
+</tr>
+
+<tr>
+ <td> <b>Date Grant was Approved:</b></td>
+ <td><%= @casefile.approvaldate %></td>
+</tr>
+<tr>
+ <td> <b>Date Grant Was Gazzeted:</b></td>
+ <td><%= @casefile.gazettenoticedate %></td>
+</tr>
+<tr>
+ <td> <b>Date of Objection:</b></td>
+ <td><%= @casefile.objectiondate %></td>
+</tr>
+
+<tr>
+ <td> <b>Date Grant Was Issued:</b></td>
+ <td><%= @casefile.grantissueddate %></td>
+</tr>
+<tr>
+ <td> <b>Date Grant Was Confirmed:</b></td>
+ <td><%= @casefile.grantconfirmeddate %></td>
+</tr>
+<tr>
+<td><b>Remarks:</b></td>
+<td> <%= @casefile.remarks %> </td>
+</tr>
+
+<tr>
+<td><b>Mobile Number:</b></td>
+<td> <%= @casefile.mobile_num %></td>
+</tr>
+</table>
+
+<div id = "dashboardicons" >
+<%= link_to link_to image_tag('/assets/edit.png') + 'Edit', edit_courtstation_casefile_path(@casefile.courtstation, @casefile) %>
+<%= link_to link_to image_tag('/assets/back.jpeg') + 'Back',  courtstation_casefiles_path(@casefile.courtstation) %>
+<%= link_to link_to image_tag('/assets/add.png') + 'New Movement', new_courtstation_casefile_movement_path(@casefile.courtstation, @casefile) %>
+</div>
+

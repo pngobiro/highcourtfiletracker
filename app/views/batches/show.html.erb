@@ -1,0 +1,62 @@
+<title>Showing Batch <%= @batch.batch_name %><</title>
+<table border ="1" cellpadding="1" cellspacing="5" >
+<tr>
+  <td><b>Batch Name:</b></td>
+  <td><%= @batch.batch_name %></td>
+</tr>
+
+<tr>
+  <td><b>Category:</b></td>
+  <td><%= @batch.category %></td>
+</tr>
+
+<tr>
+  <td><b>From:</b></td>
+  <td><%= @batch.courtstation.name %></td>
+</tr>
+
+<tr>
+  <td><b>To<b> </td>
+  <td><%=@batch.to%> </td>
+</tr>
+<tr>
+  <td><b>Date Out:</b></td>
+  <td><%= @batch.date_out %></td>
+</tr>
+<tr>
+  <td><b>Reason:</b></td>
+  <td><%= @batch.reason %></td>
+</tr>
+<tr>
+  <td><b>Officer Taking Action<b> </td>
+  <td><%=@batch.officer_taking_action%> </td>
+</tr>
+<tr>
+  <td><b>Outcome<b> </td>
+  <td><%=@batch.outcome%> </td>
+</tr>
+<tr>
+  <td><b>Result Date:</b></td>
+  <td><%= @batch.result_date %></td>
+</tr>
+
+<tr>
+  <td><b>Rejection Reason<b> </td>
+  <td><%=@batch.reason_for_rejection%> </td>
+</tr>
+<tr>
+  <td><b>Remarks<b> </td>
+  <td><%=@batch.remarks%> </td>
+</tr>
+</table>
+<h2><strong>Files:</strong></h2>
+<ol>
+<% @batch.casefiles.each do |a| %>
+  <li><%= a.casenumber_deceasedname %></li>
+<% end %>
+</ol>
+<div id = "dashboardicons" >
+<%= link_to link_to image_tag('/assets/edit.png') + 'Edit', edit_courtstation_batch_path(@batch.courtstation, @batch) %>
+<%= link_to link_to image_tag('/assets/back.jpeg') + 'Back',  courtstation_batches_path(@batch.courtstation) %>
+</div>
+

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Typeofpayment:</b>
+  <%= @payment.typeofpayment %>
+</p>
+
+<p>
+  <b>Dateofpayment:</b>
+  <%= @payment.dateofpayment %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <b>Paidby:</b>
+  <%= @payment.paidby %>
+</p>
+
+
+<%= link_to 'Edit', edit_casefile_payment_path(@payment.casefile, @payment) %> |
+<%= link_to 'Back', casefile_payments_path(@payment.casefile) %>

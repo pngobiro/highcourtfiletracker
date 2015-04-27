@@ -1,0 +1,23 @@
+<h1>User Activity</h1/>
+
+<div id = "reports" >
+
+<table border="3" class = "display" >
+<tr>
+<th>User and Date</th>
+<th>Activity Count</th>
+
+
+</tr>
+<% @movementcount.each do |a,b| %>
+<tr>
+<td><%=a%></td>
+<td><%=b%></td>
+
+<%end%>
+
+</tr>
+</table>
+
+</div>
+</div>

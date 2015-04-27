@@ -1,0 +1,29 @@
+<h1>Listing Payments for Case Number <%= @casefile.CaseNumber%> </h1></h1>
+
+<table border "1" class = "display">
+  <tr>
+    <th>Type of Payment</th>
+    <th>Date of Payment</th>
+    <th>Amount</th>
+    <th>Paid by</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @payments.each do |payment| %>
+  <tr>
+    <td><%= payment.typeofpayment %></td>
+    <td><%= payment.dateofpayment %></td>
+    <td><%= payment.amount %></td>
+    <td><%= payment.paidby %></td>
+    <td><%= link_to 'Show', [payment.casefile, payment] %></td>
+    <td><%= link_to 'Edit', edit_casefile_payment_path(payment.casefile, payment) %></td>
+   
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payment', new_casefile_payment_path(params[:casefile_id]) %>

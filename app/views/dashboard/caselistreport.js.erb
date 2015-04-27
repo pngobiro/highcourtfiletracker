@@ -1,0 +1,3 @@
+<% js = escape_javascript(render(partial: 'dashboard/list',:locals => { :casefiles => @casefiles})) %>
+$("#filterrific_results").html("<%= js %>");
+

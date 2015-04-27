@@ -1,0 +1,11 @@
+def is_admin
+ if current_user.nil?
+  redirect_to login_path
+ else
+   if current_user.admin?
+     true
+   else
+     redirect_to home_index_path
+   end
+ end
+end

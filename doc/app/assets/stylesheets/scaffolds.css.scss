@@ -1,0 +1,150 @@
+#links {
+    background: salmon;
+    width: 170px;
+    font-family: icon;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+#logo{
+    float: left;
+    padding-left: 15px;
+	padding-top: 5px;
+}
+
+#dashboard {
+    background: snow;
+    height: 150px;
+    border-radius: 15px;
+    padding: 12px;
+	text-align: center;
+	padding-top: 15px;
+}
+#header {
+    text-align: center;
+    background-color: tomato;
+    height: 80px;
+	border-radius: 40px;
+	padding-top: 3px;
+}
+#footer{
+background: tomato;
+font-size: 10px;
+border-radius: 10px;
+padding: 1.5px;
+text-align: center;
+}
+#user_nav {
+    background: tomato;
+    width: 300px;
+	color:white;
+	float: right;
+}
+.display {
+    padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	color: black;
+	background: white
+	}
+.bottomer {
+    padding-bottom: 15px;
+    padding-left: 35px;
+	
+}
+.topper {
+    padding-left: 35px;
+	padding-top: 5px;
+}
+
+.actions {
+    padding-left: 35px;
+}
+
+.field {
+    padding-left: 35px;
+}
+body {
+  background-color: green;
+  color: gold;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
+  line-height: 18px;
+  margin-top: 2em;
+  margin-left: 6em;
+  text-transform: uppercase;
+  
+}
+
+.round {
+    border-radius: 10px;
+    text-align: left
+}
+section{
+background-color: green;
+
+}
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left:10px;
+  padding-top:10px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: blue;
+  &:visited {
+    color: blue;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: gold;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  padding-left:100px;
+  background-color: blue;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+

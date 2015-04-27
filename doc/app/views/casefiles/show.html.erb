@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<table border ="1" cellpadding="5" cellspacing="5" class ="display">
+<tr>
+  <td><b>Case number:</b></td>
+  <td><%= @casefile.CaseNumber %></td>
+</tr>
+<tr>
+  <td><b>Date of filling:</b></td>
+  <td><%= @casefile.DateofFilling %></td>
+</tr>
+<tr>
+  <td><b>Court station:</b></td>
+  <td><%= @casefile.CourtStation %></td>
+</tr>
+<tr>
+  <td><b>Type of case:</b></td>
+  <td><%= @casefile.Typeofcase %></td>
+</tr>
+<tr>
+	<td><b>Case status:</b></td>
+	<td> <%= @casefile.CaseStatus %></td>
+</tr>
+<tr>
+  <td><b>Parties:</b></td>
+  <td><%= link_to 'Parties', casefile_parties_path(@casefile)%></td>
+</tr>
+<tr>
+ <td> <b>Nature of claim:</b></td>
+ <td> <%= @casefile.natureofclaim %></td>
+</tr>
+<tr>
+ <td> <b>Date last in court:</b></td>
+ <td><%= @casefile.DateLastinCourt %>/<td>
+</tr>
+<tr>
+	<td><b>Remarks:</b></td>
+	<td> <%= @casefile.Remarks %> </td>
+</tr>
+<tr>
+	<td><b> Edit </b></td>
+	<td><%= link_to 'Edit', edit_casefile_path(@casefile) %> </td>
+</tr>
+<tr>
+<td><b> Back </b> </td>
+<td><%= link_to 'Back', casefiles_path %> </td>
+</tr>
+</table>

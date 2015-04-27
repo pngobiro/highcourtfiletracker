@@ -1,0 +1,6 @@
+<h1>Editing Tracker For Case Number <%= @casefile.CaseNumber %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@tracker.casefile, @tracker] %> |
+<%= link_to 'Back', casefile_trackers_path(@tracker.casefile) %>

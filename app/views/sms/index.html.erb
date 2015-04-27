@@ -1,0 +1,30 @@
+<h1>Listing Sent SMS</h1>
+
+<table id= "sms" class = "display" >
+<thead>
+  <tr>
+    <th>Station</th>
+    <th>Number</th>
+    <th>Sent message</th>
+    <th>Sent Time</th>
+    <th>Status</th>
+
+  </tr>
+</thead>
+<tbody>
+
+<% @sms.each do |sm| %>
+  <tr>
+    <td><%= sm.station %></td>
+    <td><%= sm.number %></td>
+    <td><%= sm.sentmessage %></td>
+    <td><%= sm.created_at %></td>
+    <td><%= sm.status %></td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+

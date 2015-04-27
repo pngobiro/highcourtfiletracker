@@ -1,0 +1,50 @@
+<h1>Showing Tracker For Case Number <%= @casefile.CaseNumber %></h1>
+<p id="notice"><%= notice %></p>
+<table border "2"  >
+  <tr>
+  <td><b>Date Out:</b></td>
+  <td><%= @tracker.Date %></td>
+</tr>
+<tr>
+  <td><b>Time Out:</b></td>
+  <td><%= @tracker.Time %></td>
+</tr>
+<tr>
+  <td><b>From:</b></td>
+  <td><%= @tracker.From %></td>
+</tr>
+<tr>
+  <td><b>To:</b></td>
+  <td><%= @tracker.To %></td>
+</tr>
+<tr>
+  <td><b>Taken By:</b></td>
+  <td><%= @tracker.TakenBy %></td>
+</tr>
+<tr>
+ <td> <b>Reason:</b></td>
+  <td><%= @tracker.Reason %></td>
+</tr>
+<tr>
+  <td><b>Officer Taking Action:</b></td>
+  <td><%= @tracker.JudgeMagistrate %></td>
+</tr>
+<tr>
+  <td><b>Date In:</b></td>
+ <td> <%= @tracker.DateIn %></td>
+<tr>
+</tr>
+  <td><b>Remarks:</b></td>
+  <td><%= @tracker.Reamarks %></td>
+<tr>
+</tr>
+  <td><b>Results:</b></td>
+  <td><%= @tracker.Results %></td>
+</tr>
+<tr>
+  <td><b>Date of result:</b></td>
+  <td><%= @tracker.DateofResult %></td>
+</tr>
+</table>
+<%= link_to 'Edit', edit_casefile_tracker_path(@tracker.casefile, @tracker) %> |
+<%= link_to 'Back', casefile_trackers_path(@tracker.casefile) %>

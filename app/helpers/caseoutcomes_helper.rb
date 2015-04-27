@@ -1,0 +1,2 @@
+module CaseoutcomesHelper
+end

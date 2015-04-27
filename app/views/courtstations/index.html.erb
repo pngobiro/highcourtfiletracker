@@ -1,0 +1,28 @@
+<h1>Listing courtstations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Typeofcourt</th>
+    <th></th>
+<th></th>
+    <th></th>
+<th></th>
+   
+  </tr>
+
+<% @courtstations.each do |courtstation| %>
+  <tr>
+    <td><%= courtstation.name %></td>
+    <td><%= courtstation.typeofcourt %></td>
+  
+<td><%= link_to 'cases',  courtstation_casefiles_path(courtstation.id)%></td>
+ 
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Courtstation', new_courtstation_path %>
+

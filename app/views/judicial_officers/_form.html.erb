@@ -1,0 +1,33 @@
+<%= form_for(@judicial_officer) do |f| %>
+  <% if @judicial_officer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@judicial_officer.errors.count, "error") %> prohibited this judicial_officer from being saved:</h2>
+
+      <ul>
+      <% @judicial_officer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :chambers %><br />
+    <%= f.text_field :chambers %>
+  </div>
+  <div class="field">
+    <%= f.label :station %><br />
+    <%= f.text_field :station %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

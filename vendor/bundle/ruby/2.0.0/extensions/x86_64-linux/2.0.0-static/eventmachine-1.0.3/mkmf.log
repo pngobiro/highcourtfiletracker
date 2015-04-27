@@ -1,0 +1,287 @@
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/common/lib -lssl -lcrypto  -m64   -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/common/lib -lssl -lcrypto  -m64   -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for openssl
+cflags: -I/opt/tracks-2.2.3-0/common/include
+ldflags: -L/opt/tracks-2.2.3-0/common/lib
+libs: -lssl -lcrypto
+
+have_var: checking for rb_trap_immediate in ruby.h,rubysig.h... -------------------- no
+
+"gcc -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include -m64  -c conftest.c"
+In file included from conftest.c:4:
+/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward/rubysig.h:14:2: warning: #warning rubysig.h is obsolete
+conftest.c: In function ‘t’:
+conftest.c:8: error: ‘rb_trap_immediate’ undeclared (first use in this function)
+conftest.c:8: error: (Each undeclared identifier is reported only once
+conftest.c:8: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: #include <rubysig.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int t(void) { const volatile void *volatile p; p = &(&rb_trap_immediate)[0]; return 0; }
+ 9: int main(int argc, char **argv)
+10: {
+11:   if (argc > 1000000) {
+12:     printf("%p", &t);
+13:   }
+14: 
+15:   return 0;
+16: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_blocking_region()... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: warning: ‘rb_thread_blocking_region’ is deprecated (declared at /opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/intern.h:841)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for inotify_init() in sys/inotify.h... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <sys/inotify.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { void ((*volatile p)()); p = (void ((*)()))inotify_init; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+have_func: checking for writev() in sys/uio.h... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <sys/uio.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { void ((*volatile p)()); p = (void ((*)()))writev; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_wait_for_single_fd()... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘rb_wait_for_single_fd’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { rb_wait_for_single_fd(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_enable_interrupt()... -------------------- no
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘rb_enable_interrupt’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enable_interrupt; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+/tmp/ccunTYFt.o: In function `t':
+conftest.c:(.text+0x37): undefined reference to `rb_enable_interrupt'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { rb_enable_interrupt(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_time_new()... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_time_new; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_header: checking for sys/event.h... -------------------- no
+
+"gcc -E -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include  conftest.c -o conftest.i"
+conftest.c:3:23: error: sys/event.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/event.h>
+/* end */
+
+--------------------
+
+have_func: checking for epoll_create() in sys/epoll.h... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lssl -lcrypto -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <sys/epoll.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { void ((*volatile p)()); p = (void ((*)()))epoll_create; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+"g++ -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 -I/opt/tracks-2.2.3-0/common/include conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic -L/opt/tracks-2.2.3-0/common/lib  -m64   -lssl -lcrypto -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static -lstdc++ -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3:   #include <utility>
+4:   using namespace std;
+5:   int main(){ pair<int,int> tuple = make_pair(1,2); }
+/* end */
+

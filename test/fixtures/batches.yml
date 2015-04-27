@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  batch_name: MyString
+  category: MyString
+  date_out: 2015-04-15
+  reason: MyString
+  from: MyString
+  to: MyString
+  officer_taking_action: MyString
+  outcome: MyString
+  result_date: 2015-04-15
+  reason_for_rejection: MyText
+  recordcreatedby: MyString
+  recordupdatedby: MyString
+  remarks: MyText
+  casenumber: MyString
+
+two:
+  batch_name: MyString
+  category: MyString
+  date_out: 2015-04-15
+  reason: MyString
+  from: MyString
+  to: MyString
+  officer_taking_action: MyString
+  outcome: MyString
+  result_date: 2015-04-15
+  reason_for_rejection: MyText
+  recordcreatedby: MyString
+  recordupdatedby: MyString
+  remarks: MyText
+  casenumber: MyString

@@ -1,0 +1,97 @@
+<div id ="filters">
+<p><b>Showing Movement for File: <%=@casefile.casenumber%></b></p>
+<p><b>Parties to the Case: <%=@casefile.parties_names%></b></p>
+<p><b>Type of the Case: <%=@casefile.typeofcase%></b></p>
+<p><b>Station: <%=@casefile.courtstation.name%></b></p>
+</div>
+<table border ="1" cellpadding="1" cellspacing="5" >
+<tr>
+  <td><b>Date Out:</b></td>
+  <td><%= @movement.date %></td>
+</tr>
+<tr>
+
+  <td><b>Time Out:</b></td>
+ <td> <%= @movement.time %></td>
+
+</tr>
+<tr>
+
+ <td> <b>From:</b></td>
+  <td><%= @movement.from %></td>
+
+</tr>
+<tr>
+
+  <td><b>To:</b></td>
+  <td><%= @movement.to %></td>
+
+</tr>
+<tr>
+
+  <td><b>Takenby:</b></td>
+  <td><%= @movement.takenby %></td>
+
+</tr>
+<tr>
+
+  <td><b>Name of Officer Taking Action:</b></td>
+  <td><%= @movement.officer %></td>
+
+</tr>
+<tr>
+
+ <td> <b>Reason:</b></td>
+ <td> <%= @movement.reason %></td>
+
+</tr>
+<tr>
+
+ <td> <b>Results:</b></td>
+  <td><%= @movement.results %></td>
+
+</tr>
+<tr>
+
+  <td><b>Dateofresult:</b></td>
+ <td> <%= @movement.dateofresult %></td>
+
+</tr>
+<tr>
+
+ <td> <b>Reason for Rejection:</b></td>
+  <td><%= @movement.result_reason %></td>
+
+</tr>
+
+<tr>
+
+  <td><b>Record created by:</b></td>
+  <td><%= @movement.recordcreatedby %></td>
+
+</tr>
+<tr>
+
+ <td> <b>Record updated by:</b></td>
+  <td><%= @movement.recordupdatedby %></td>
+
+</tr>
+<tr>
+
+ <td> <b>Date in:</b></td>
+  <td><%= @movement.datein %></td>
+
+</tr>
+<tr>
+
+ <td> <b>Remarks:</b></td>
+ <td> <%= @movement.remarks %></td>
+
+
+</tr>
+</table>
+
+<div id = "dashboardicons" >
+ <%= link_to link_to image_tag('/assets/edit.png') +'Edit', edit_courtstation_casefile_movement_path(@movement.casefile.courtstation,@movement.casefile, @movement)%>
+<%= link_to link_to image_tag('/assets/back.jpeg') + 'Back',courtstation_casefile_movements_path(@casefile.courtstation,@casefile)%>
+</div>

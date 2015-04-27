@@ -1,0 +1,67 @@
+<%= form_for(@casefile) do |f| %>
+  <% if @casefile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@casefile.errors.count, "error") %> prohibited this casefile from being saved:</h2>
+
+      <ul>
+      <% @casefile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :'Case Number' %><br />
+    <%= f.text_field(:CaseNumber,:Placeholder => "Type Case Number Here" )%>
+  </div>
+  <div class="field">
+    <%= f.label :'Date of Filling' %><br />
+    <%= f.date_select :DateofFilling, :start_year=> 2000,:end_year=> 2013,:include_blank => true%>
+  </div>
+   <div class="field">
+    <%= f.label :'Year of Filling' %><br />
+    <%= f.text_field(:yearfiled,:value => "2000") %>
+  </div>
+  <div class="field">
+    <%= f.label :'Court Station' %><br />
+    <%= f.text_field(:CourtStation,:value => "Milimani Civil Division") %>
+  </div>
+  <div class="field">
+    <%= f.label :'Type of case' %><br />
+    <%= f.select :Typeofcase,options_for_select([["Civil", "Civil"], ["Civil Appeal", "Civil Appeal"], ["Civil Miscellaneous Application" , "Civil Miscellaneous Application",selected="selected"]]) %>
+  </div>
+ 
+  <div class="field">
+   <%= f.label :"Plaintiff/Advocate" %><br />
+   <%= f.text_area :plaintiff_advocate,:size => "24x3"%>
+  </div>
+  <div class="field">
+   <%= f.label "Defendant/Advocate"%><br />
+   <%= f.text_area :defendant_advocate,:size => "24x3"%>
+  </div>
+  <div class="field">
+    <%= f.label :'Nature of Claim' %><br />
+    <%= f.text_area :natureofclaim, :size => "24x6"%>
+  </div>
+  <div class="field">
+    <%= f.label :'Date Last in Court' %><br />
+    <%= f.date_select :DateLastinCourt,:start_year=> 2000,:end_year=> 2013,:include_blank => true%>
+  </div>
+    <div class="field">
+   <%= f.label :"Period From Last Action" %><br />
+   <%= f.text_field :periodlastaction%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Remarks %><br />
+    <%= f.text_area(:Remarks, :size => "24x3" )%>
+	 </div>
+	<div class="field">
+    <%= f.label :'Case Status' %><br />
+    <%= f.select :CaseStatus,options_for_select([["Pending", "Pending"], ["Completed", "Completed"],["Transfared", "Transfared"],["Missing", "Missing"]]) %>
+  </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

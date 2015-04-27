@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2014-10-11
+  time: 2014-10-11 21:18:15
+  from: MyString
+  to: MyString
+  takenby: MyString
+  reason: MyString
+  results: MyString
+  dateofresult: 2014-10-11
+  officer: MyString
+  reasonforadjournment: MyString
+  casestatusaftermovement: MyString
+  recordcreatedby: MyString
+  recordupdatedby: MyString
+  datein: 2014-10-11
+  remarks: MyText
+  station: MyString
+
+two:
+  date: 2014-10-11
+  time: 2014-10-11 21:18:15
+  from: MyString
+  to: MyString
+  takenby: MyString
+  reason: MyString
+  results: MyString
+  dateofresult: 2014-10-11
+  officer: MyString
+  reasonforadjournment: MyString
+  casestatusaftermovement: MyString
+  recordcreatedby: MyString
+  recordupdatedby: MyString
+  datein: 2014-10-11
+  remarks: MyText
+  station: MyString

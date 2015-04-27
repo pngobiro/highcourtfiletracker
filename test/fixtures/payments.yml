@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  typeofpayment: MyString
+  dateofpayment: 2012-12-18
+  amount: 1
+  paidby: MyString
+
+two:
+  typeofpayment: MyString
+  dateofpayment: 2012-12-18
+  amount: 1
+  paidby: MyString

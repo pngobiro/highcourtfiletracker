@@ -1,0 +1,41 @@
+<h1>Listing case_files</h1>
+
+<table>
+  <tr>
+    <th>Casenumber</th>
+    <th>Dateoffilling</th>
+    <th>Courtstation</th>
+    <th>Typeofcase</th>
+    <th>Casestatus</th>
+    <th>Caseparties</th>
+    <th>Prayerssought</th>
+    <th>Datelastincourt</th>
+    <th>Dateoflastaction</th>
+    <th>Remarks</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @case_files.each do |case_file| %>
+  <tr>
+    <td><%= case_file.CaseNumber %></td>
+    <td><%= case_file.DateofFilling %></td>
+    <td><%= case_file.CourtStation %></td>
+    <td><%= case_file.TypeofCase %></td>
+    <td><%= case_file.CaseStatus %></td>
+    <td><%= case_file.CaseParties %></td>
+    <td><%= case_file.PrayersSought %></td>
+    <td><%= case_file.DateLastinCourt %></td>
+    <td><%= case_file.DateofLastAction %></td>
+    <td><%= case_file.Remarks %></td>
+    <td><%= link_to 'Show', case_file %></td>
+    <td><%= link_to 'Edit', edit_case_file_path(case_file) %></td>
+    <td><%= link_to 'Destroy', case_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Case file', new_case_file_path %>

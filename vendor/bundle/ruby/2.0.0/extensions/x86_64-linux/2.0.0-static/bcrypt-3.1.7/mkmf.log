@@ -1,0 +1,24 @@
+have_header: checking for ruby/util.h... -------------------- yes
+
+"gcc -o conftest -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3 conftest.c  -L. -L/opt/tracks-2.2.3-0/ruby/lib -Wl,-R/opt/tracks-2.2.3-0/ruby/lib -L. -L/bitnami/rubystack-linux-x64/output/sqlite/lib -L/opt/tracks-2.2.3-0/common/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -L/bitnami/rubystack-linux-x64/output/ImageMagick/lib -fstack-protector -rdynamic -Wl,-export-dynamic  -m64   -Wl,-R -Wl,/opt/tracks-2.2.3-0/ruby/lib -L/opt/tracks-2.2.3-0/ruby/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+/opt/tracks-2.2.3-0/ruby/lib/ruby/2.0.0/mkmf.rb:373: warning: Insecure world writable dir /opt/tracks-2.2.3-0/sqlite/bin in PATH, mode 040777
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/x86_64-linux -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0/ruby/backward -I/opt/tracks-2.2.3-0/ruby/include/ruby-2.0.0 -I. -DAI_ADDRCONFIG=0 -I/opt/tracks-2.2.3-0/common/include -I/bitnami/rubystack-linux-x64/output/sqlite/include -I/opt/tracks-2.2.3-0/common/include/sasl -I/opt/tracks-2.2.3-0/common/include   -I/opt/tracks-2.2.3-0/common/include -fPIC -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -I/bitnami/rubystack-linux-x64/output/ImageMagick/include/ImageMagick -O3  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/util.h>
+/* end */
+
+--------------------
+
