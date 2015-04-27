@@ -7,3 +7,4 @@ jQuery ->
   $('#batches').dataTable
     sPaginationType: "full_numbers"
     bjQueryUI:true
+    "aaSorting": [ ] // Prevents initial sorting

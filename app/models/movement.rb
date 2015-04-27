@@ -38,6 +38,8 @@ end
 def self.outcome
 ['Matter Approved','Matter Not Approved','Grant Signed','Matter Gazzeted', 'Matter Certified']
 end
-
+def self.options_for_category
+Movement.pluck(:category).uniq
+end
 end
 
