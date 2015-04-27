@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $('#batch_casefile_ids').chosen()
+jQuery ->
   $('#batches').dataTable
     sPaginationType: "full_numbers"
     bjQueryUI:true

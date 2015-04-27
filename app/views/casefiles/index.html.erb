@@ -19,7 +19,6 @@
 	<table id= "casefiles" class = "display" >
 	<thead>
   	<tr>
-   	<th>Case Index</th>   
 	<th>Case Number</th>
 	<th>Date Grant was Approved</th>
 	<th>Deceased Name</th>
@@ -41,7 +40,6 @@
 	<tbody>
 	<% @casefiles.each do |casefile| %>
   	<tr>
-  	<td><%= casefile.caseindex %></td>
     	<td><%= casefile.casenumber %></td>
     	<td><%= casefile.approvaldate%></td>
     	<td><%= casefile.parties_names %></td>
