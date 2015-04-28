@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'curb', '~> 0.8.6'
+gem 'pg'
 gem 'mysql2'
 gem 'activerecord-mysql-adapter'
 gem 'rails3-jquery-autocomplete'
