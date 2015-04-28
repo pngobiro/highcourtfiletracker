@@ -1,14 +1,14 @@
 class Movement < ActiveRecord::Base
   before_save :insert_createdby, :if => :new_record? 
   belongs_to :casefile
- validates :to,:presence => true  
+ validates :destination,:presence => true  
  validates :officer,:presence => true
  validates :reason,:presence => true
  validates :category,:presence => true,:length => { :minimum => 5 }
  #validates :results,:presence => true,:on => :update
  #validates :dateofresult,:presence => true,:on => :update
 
- attr_accessible :date, :datein, :dateofresult, :from, :category,:officer, :reason,:result_reason,:reasonforadjournment, :recordcreatedby, :recordupdatedby, :remarks, :tel,:results, :station, :takenby, :time, :to
+ attr_accessible :date_out, :datein, :result_date, :from, :category,:officer, :reason,:reason_for_rejection, :recordcreatedby, :recordupdatedby, :remarks,:outcome, :takenby, :time, :destination
 
 scope :none, lambda { where(:id => -1)}
 

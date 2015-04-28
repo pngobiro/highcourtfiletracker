@@ -7,7 +7,7 @@
 <table border ="1" cellpadding="1" cellspacing="5" >
 <tr>
   <td><b>Date Out:</b></td>
-  <td><%= @movement.date %></td>
+  <td><%= @movement.date_out %></td>
 </tr>
 <tr>
 
@@ -24,7 +24,7 @@
 <tr>
 
   <td><b>To:</b></td>
-  <td><%= @movement.to %></td>
+  <td><%= @movement.destination %></td>
 
 </tr>
 <tr>
@@ -48,19 +48,19 @@
 <tr>
 
  <td> <b>Results:</b></td>
-  <td><%= @movement.results %></td>
+  <td><%= @movement.outcome %></td>
 
 </tr>
 <tr>
 
   <td><b>Dateofresult:</b></td>
- <td> <%= @movement.dateofresult %></td>
+ <td> <%= @movement.result_date %></td>
 
 </tr>
 <tr>
 
  <td> <b>Reason for Rejection:</b></td>
-  <td><%= @movement.result_reason %></td>
+  <td><%= @movement.reason_for_rejection %></td>
 
 </tr>
 

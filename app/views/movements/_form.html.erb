@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label 'Date Out' %><br />
-    <%= f.date_select :date , :order => [:day, :month, :year]%>
+    <%= f.date_select :date_out , :order => [:day, :month, :year]%>
   </div>
   <div class="field">
     <%= f.label 'Category' %><br />
@@ -24,8 +24,8 @@
     <%= f.text_field :from , :Placeholder => "Type current location of the file"%>
   </div>
   <div class="field">
-    <%= f.label :to %><br />
-    <%= f.text_field :to , :Placeholder => "Where the File is Taken To?"%>
+    <%= f.label :'Destination' %><br />
+    <%= f.text_field :destination , :Placeholder => "Where the File is Taken To?"%>
   </div>
   <div class="field">
     <%= f.label :officer %><br />
@@ -41,15 +41,15 @@
   </div>
   <div class="field">
     <%= f.label :results %><br />
-    <%= f.text_field :results , :Placeholder => "What were the Results?" %>
+    <%= f.text_field :outcome , :Placeholder => "What were the Outcome?" %>
   </div>
   <div class="field">
     <%= f.label :dateofresult %><br />
-    <%= f.date_select :dateofresult,:start_year=> 2010,:end_year=> 2015,:include_blank => true , :order => [:day, :month, :year]%>
+    <%= f.date_select :result_date,:start_year=> 2010,:end_year=> 2015,:include_blank => true , :order => [:day, :month, :year]%>
   </div>
   <div class="field">
     <%= f.label 'Rejection Reasons' %><br />
-    <%= f.text_area :result_reason,:size => "48x6",:Placeholder => "Reasons Why action was not Successful"%>
+    <%= f.text_area :reason_for_rejection,:size => "48x6",:Placeholder => "Reasons Why action was not Successful"%>
   </div>
   <div class="field">
     <%= f.hidden_field :recordupdatedby, :value =>current_user.username,:readonly => true%>
@@ -57,9 +57,6 @@
   <div class="field">
     <%= f.label :remarks %><br />
     <%= f.text_area :remarks, :Placeholder => "Type any other relevant information about the file movemement",:size => "24x3"%>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :station, :value =>@courtstation.name,:readonly => true%>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -11,7 +11,6 @@ class << self
   end
 
 end
-validates :station,:presence => true
 validates :username, :uniqueness => true
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -20,7 +19,7 @@ validates :username, :uniqueness => true
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :station, :pj ,:mobile
+  attr_accessible :courtstation_id,:email, :password, :password_confirmation, :remember_me, :username, :pj ,:mobile
   # attr_accessible :title, :body
 
 scope :station, lambda { |userstation| where("courtstation"=> User.current_user.station)}
