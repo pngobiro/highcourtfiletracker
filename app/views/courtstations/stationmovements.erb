@@ -37,7 +37,6 @@
  
     <th>Datein</th>
     <th>Remarks</th>
-	<th>Telephone Number</th>
     <th>Edit</th>
     <th>Show</th>
 
@@ -59,7 +58,6 @@
    
     <td><%= movement.datein %></td>
     <td><%= movement.remarks %></td>
-  <td><%= movement.tel %></td>
     <td><%= link_to 'Edit', edit_courtstation_casefile_movement_path(movement.casefile.courtstation,movement.casefile, movement)%></td>
  <td><%= link_to 'Show', courtstation_casefile_movement_path(movement.casefile.courtstation,movement.casefile, movement)%></td>
   </tr>
