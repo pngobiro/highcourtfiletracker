@@ -5,8 +5,8 @@ after_update :updatemovements, :unless => :outcome_nil
 validates :outcome,:presence => true,:on => :update
 validates :result_date ,:presence => true,:on => :update
 	belongs_to :courtstation
-  	has_many :authorships
-	has_many :casefiles,through: :authorships
+  	has_many :batchships
+	has_many :casefiles,through: :batchships
  attr_accessible :casefile_ids, :batch_name, :category, :date_out, :from, :officer_taking_action, :outcome, :reason, :reason_for_rejection, :recordcreatedby, :recordupdatedby, :remarks, :result_date, :to
 validates :casefile_ids ,:presence => true 
 

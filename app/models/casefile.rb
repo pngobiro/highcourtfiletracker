@@ -3,8 +3,8 @@ class Casefile < ActiveRecord::Base
 # Has many movements
 
 has_many :movements
-  has_many :authorships
-  has_many :batches, through: :authorships
+  has_many :batchships
+  has_many :batches, through: :batchships
 # Belongs to a particular station
 
 belongs_to :courtstation
