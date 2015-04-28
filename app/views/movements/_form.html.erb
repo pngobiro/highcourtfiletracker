@@ -37,11 +37,11 @@
   </div>
   <div class="field">
     <%= f.label :reason %><br />
-    <%= f.text_field :reason , :Placeholder => "Reasons why the file being taken", :rows => "10"%>
+    <%= f.select :reason ,Movement.reasons%>
   </div>
   <div class="field">
     <%= f.label :results %><br />
-    <%= f.text_field :outcome , :Placeholder => "What were the Outcome?" %>
+    <%= f.select :outcome , Movement.outcome,:include_blank => true%>
   </div>
   <div class="field">
     <%= f.label :dateofresult %><br />
