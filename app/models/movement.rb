@@ -24,7 +24,7 @@ date_out = self.date_out
 outcome = self.outcome
 result_date = self.result_date
 
-if outcome.blank?
+if self.outcome.blank?
 casefile.casestatus= "#{reason} on #{date_out}"
 else
 casefile.casestatus = "#{outcome} on #{result_date}"
